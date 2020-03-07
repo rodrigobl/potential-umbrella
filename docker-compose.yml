@@ -12,6 +12,13 @@ services:
     - ./php:/var/www/html/
   ports:
     - 8000:80
+ nodejs:
+  build: ./nodejs
+  command: npm start
+  ports:
+    - 3000:3000
+  volumes:
+    - ./nodejs:/usr/app
  db:
   container_name: mysql8
   image: mysql:8.0
